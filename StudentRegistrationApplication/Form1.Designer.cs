@@ -43,6 +43,8 @@
             this.RegisterStudentButton = new System.Windows.Forms.Button();
             this.Gender = new System.Windows.Forms.Label();
             this.DateofBirth = new System.Windows.Forms.Label();
+            this.Programbox = new System.Windows.Forms.ComboBox();
+            this.Selectprogram = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LastNameBox
@@ -52,6 +54,7 @@
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(172, 26);
             this.LastNameBox.TabIndex = 0;
+            this.LastNameBox.Text = "S";
             this.LastNameBox.TextChanged += new System.EventHandler(this.LastNameTextbx_TextChanged);
             // 
             // MiddleNameBox
@@ -177,7 +180,7 @@
             this.RegisterStudentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterStudentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegisterStudentButton.ForeColor = System.Drawing.Color.White;
-            this.RegisterStudentButton.Location = new System.Drawing.Point(85, 406);
+            this.RegisterStudentButton.Location = new System.Drawing.Point(127, 487);
             this.RegisterStudentButton.Name = "RegisterStudentButton";
             this.RegisterStudentButton.Size = new System.Drawing.Size(153, 32);
             this.RegisterStudentButton.TabIndex = 11;
@@ -207,12 +210,36 @@
             this.DateofBirth.Text = "Date of Birth*";
             this.DateofBirth.Click += new System.EventHandler(this.label1_Click_2);
             // 
+            // Programbox
+            // 
+            this.Programbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Programbox.FormattingEnabled = true;
+            this.Programbox.Location = new System.Drawing.Point(56, 436);
+            this.Programbox.Name = "Programbox";
+            this.Programbox.Size = new System.Drawing.Size(341, 28);
+            this.Programbox.TabIndex = 14;
+            this.Programbox.Text = "Select Program";
+            this.Programbox.SelectedIndexChanged += new System.EventHandler(this.Programbox_SelectedIndexChanged);
+            // 
+            // Selectprogram
+            // 
+            this.Selectprogram.AutoSize = true;
+            this.Selectprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Selectprogram.Location = new System.Drawing.Point(52, 403);
+            this.Selectprogram.Name = "Selectprogram";
+            this.Selectprogram.Size = new System.Drawing.Size(151, 20);
+            this.Selectprogram.TabIndex = 15;
+            this.Selectprogram.Text = "Program to apply*";
+            this.Selectprogram.Click += new System.EventHandler(this.Selectprogram_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(860, 558);
+            this.Controls.Add(this.Selectprogram);
+            this.Controls.Add(this.Programbox);
             this.Controls.Add(this.DateofBirth);
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.RegisterStudentButton);
@@ -253,6 +280,8 @@
         private System.Windows.Forms.Button RegisterStudentButton;
         private System.Windows.Forms.Label Gender;
         private System.Windows.Forms.Label DateofBirth;
+        private System.Windows.Forms.ComboBox Programbox;
+        private System.Windows.Forms.Label Selectprogram;
     }
 }
 

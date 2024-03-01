@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace StudentRegistrationApplication
         public Form1()
         {
             InitializeComponent();
+            
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -59,12 +63,22 @@ namespace StudentRegistrationApplication
                Day.Items.Add(i);
             }
             
-            for(int i = 1500;i <= 2024; i++)
+            for(int i = 1900;i <= 2024; i++)
             {
                 Year.Items.Add(i);
             }
-           
-           
+            ArrayList programs = new ArrayList();
+            programs.Add("Bachelor of Science in Computer Science");
+            programs.Add("Bachelor of Science in Information Technology");
+            programs.Add("Bachelor of Science in Information System");
+            programs.Add("Bachelor of Science in Computer Engineering");
+
+            foreach (string program in programs)
+            {
+                Programbox.Items.Add(program);
+            }
+
+
         }
 
         private void LastNameTextbx_TextChanged(object sender, EventArgs e)
@@ -87,13 +101,24 @@ namespace StudentRegistrationApplication
             {
                 Gender = "Male";
             }
-            else
+            else if(Female.Checked)
             {
                 Gender = "Female";
             }
+            else
+            {
+                MessageBox.Show("Please select a  gender. ");
+                return;
+            }
+
+
+
+
             MessageBox.Show("Name :  " + lastName + " " + firstName + " " + middleName +
                 "\n" + "Gender : " + Gender +
-                "\n" + "Date of Birth : " + Month.Text + " " + Day.Text +  " " + Year.Text);
+                "\n" + "Date of Birth : " + Month.Text + " " + Day.Text +  " " + Year.Text +
+                "\n" + "Course/Program : " + Programbox.Text);
+                 
                        
                              
         }
@@ -104,6 +129,16 @@ namespace StudentRegistrationApplication
         }
 
         private void FemaleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Programbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Selectprogram_Click(object sender, EventArgs e)
         {
 
         }
